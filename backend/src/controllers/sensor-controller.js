@@ -1,10 +1,9 @@
-require('dotenv').config();
 const express = require('express');
-const process = require('process');
 const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const sensorModel = require('../models/sensor-model');
 
@@ -31,12 +30,12 @@ module.exports = {
         data.humidity == null ||
         data.roomArea == null
       ) {
-        let failMessage = { error: true, msg: 'There is a missing data' };
+        const failMessage = { error: true, msg: 'There is a missing data' };
         res.status(401).send(failMessage);
         reject(failMessage);
       } else {
         /* Add data to json storage */
-        let addDataStatus = sensorModel.addData(data);
+        const addDataStatus = sensorModel.addData(data);
         res.status(200).send(addDataStatus);
         resolve(addDataStatus);
       }
