@@ -4,8 +4,8 @@
 
 Sensor streaming is my attempt to build an integrated IoT system consisted of three different applications. The three are:
 
-- [ **Implementation is DONE** ] Client: This is a nodejs client built for simulating an IoT sensor gateway client, such as Raspberry Pi, whose function is to periodically send sensor data to backend through a POST request.
-- [ **Implementation is DONE** ] Backend: A simple express backend which handles GET and POST requests from a client, i.e. sensor gateway, and also from the frontend part of the app. For now the data is stored in a json file for a demo purpose.
+- Client: This is a nodejs client built for simulating an IoT sensor gateway client, such as Raspberry Pi, whose function is to periodically send sensor data to backend through a POST request. [ **Implementation is DONE** ]
+- Backend: A simple express backend which handles GET and POST requests from a client, i.e. sensor gateway, and also from the frontend part of the app. For now the data is stored in a json file for a demo purpose. [ **Implementation is DONE** ]
 - Frontend: A frontend application which fetchs data from storage through GET request endpoint provided by the express backend. Hopefully we can create a simple dashboard which can graph the data, which is the temperature and humidity data by room area and also by date time.
 
 Basically, the underlying architecture for this application can be understood from this diagram.
