@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 1,
+    "temperature": 21.279782079384667,
+    "humidity": 87.2525512400796,
+    "roomArea": "roomArea1"
+  },
+  {
+    "id": 2,
+    "temperature": 21.279782079384667,
+    "humidity": 87.2525512400796,
+    "roomArea": "roomArea2"
+  },
+  {
+    "id": 3,
+    "temperature": 22.279782079384667,
+    "humidity": 87.2525512400796,
+    "roomArea": "roomArea3"
+  },
+  {
+    "id": 5,
+    "temperature": 23.279782079384667,
+    "humidity": 85.2525512400796,
+    "roomArea": "roomArea3"
+  }
+]
