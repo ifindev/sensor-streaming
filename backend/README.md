@@ -1,7 +1,7 @@
 ## Todo for the backend part:
 
-- Write a basic skeleton for sensor data model, controller, and router. [ **DONE** ]
-- Implement a `POST` request to add data to `db.json` in `sensor-controller` and `sensor-model`. The request body's data field will have a structure like this:
+- [ **DONE** ] Write a basic skeleton for sensor data model, controller, and router.
+- [ **DONE** ] Implement a `POST` request to add data to `db.json` in `sensor-controller` and `sensor-model`. The request body's data field will have a structure like this:
 
 ```js
 {
@@ -12,12 +12,12 @@
 }
 ```
 
-- For an input validation, write a custom dataValidation middleware that will validates whether all the required request's body is filled.
+- [ **DONE** ] For an input validation, write a custom dataValidation logic that will validates whether all the required request's body is filled.
 
-  - If all the required field is filled, then this middleware will return true.
-  - If one field is missing, then this middleware will return false.
+- If all the required field is filled, then the data will be stored.
+- If one field is missing, then status error will be send.
 
-- On the `sensor-model` which handles the data addition into `db.json`, add a timestamp data into the received data before storing it on the data storage. So the final data will look something like this:
+- [ **DONE** ] On the `sensor-model` which handles the data addition into `db.json`, add a timestamp data into the received data before storing it on the data storage. So the final data will look something like this:
 
 ```js
 {
@@ -29,7 +29,7 @@
 },
 ```
 
-- Write a middleware for adding and reading data to and from the json file storage.
+- [ **DONE** ] Write util functions for adding and reading data to and from the json file storage.
 
 - Handle GET request for all the data from json file.
 

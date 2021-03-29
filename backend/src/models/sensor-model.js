@@ -20,6 +20,10 @@ module.exports = {
     let exist = storedData.find((item) => item.id === data.id);
 
     if (!exist) {
+      /* Add timestamp field to data */
+      let timestamp = Date.now();
+      data = { ...data, timestamp: timestamp };
+
       /* store data on json file */
       storedData.push(data);
       accessJSON.storeToJSON(filename, storedData);
