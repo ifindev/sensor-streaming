@@ -20,8 +20,17 @@ setInterval(() => {
     roomArea: roomArea,
   };
 
+  // request options
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
   axios
-    .post(testEndpoint, data)
+    .post(endpoint, options)
     .then((response) => {
       console.log(response.data);
       // Set new value to data

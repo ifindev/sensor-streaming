@@ -21,23 +21,25 @@ module.exports = {
   },
 
   addData: function (req, res) {
-    const data = req.body;
+    return new Promise((resolve, reject) => {
+      const data = req.body;
 
-    /* Validate that there's no missing field */
-    if (
-      data.id == null ||
-      data.temperature == null ||
-      data.humidity == null ||
-      data.roomArea == null
-    ) {
-      return res
-        .status(401)
-        .send({ error: true, msg: 'There is a missing data' });
-    }
-
-    /* Add data to json storage */
-    let addDataStatus = sensorModel.addData(data);
-
-    res.status(200).send(addDataStatus);
+      /* Validate that there's no missing field */
+      if (
+        data.id == null ||
+        data.temperature == null ||
+        data.humidity == null ||
+        data.roomArea == null
+      ) {
+        let failMessage = { error: true, msg: 'There is a missing data' };
+        res.status(401).send(failMessage);
+        reject(failMessage);
+      } else {
+        /* Add data to json storage */
+        let addDataStatus = sensorModel.addData(data);
+        res.status(200).send(addDataStatus);
+        resolve(addDataStatus);
+      }
+    });
   },
 };
