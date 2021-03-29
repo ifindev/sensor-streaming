@@ -29,8 +29,6 @@ setInterval(() => {
   })
     .then((response) => {
       console.log(response.data);
-      console.log('response');
-
       id += 1;
     })
     .catch((error) => {
