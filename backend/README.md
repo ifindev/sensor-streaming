@@ -14,8 +14,8 @@
 
 - [ **DONE** ] For an input validation, write a custom dataValidation logic that will validates whether all the required request's body is filled.
 
-- If all the required field is filled, then the data will be stored.
-- If one field is missing, then status error will be send.
+  - If all the required field is filled, then the data will be stored.
+  - If one field is missing, then status error will be send.
 
 - [ **DONE** ] On the `sensor-model` which handles the data addition into `db.json`, add a timestamp data into the received data before storing it on the data storage. So the final data will look something like this:
 
