@@ -1,4 +1,5 @@
 const accessJSON = require('../utils/access-json');
+const process = require('process');
 
 module.exports = {
   fetchAllData: function () {
