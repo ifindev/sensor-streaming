@@ -13,27 +13,27 @@ module.exports = {
 
   addData: function (data) {
     /* get data on json file */
-    let filename = `${process.cwd()}/data/sensor_data.json`;
-    let storedData = accessJSON.readFromJSON(filename);
+    const filename = `${process.cwd()}/data/sensor_data.json`;
+    const storedData = accessJSON.readFromJSON(filename);
 
     /* Check whether data with this id has been stored before */
-    let exist = storedData.find((item) => item.id === data.id);
+    const exist = storedData.find((item) => item.id === data.id);
 
     if (!exist) {
       /* Add timestamp field to data */
-      let timestamp = Date.now();
+      const timestamp = Date.now();
       data = { ...data, timestamp: timestamp };
 
       /* store data on json file */
       storedData.push(data);
       accessJSON.storeToJSON(filename, storedData);
-      let status = {
+      const status = {
         success: true,
         msg: 'data added successfully',
       };
       return status;
     } else {
-      let status = {
+      const status = {
         success: false,
         msg: 'data with that id is already exist!',
       };
