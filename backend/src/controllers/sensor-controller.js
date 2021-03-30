@@ -14,9 +14,25 @@ module.exports = {
   },
 
   fetchSingleData: function (req, res) {
-    const id = req.params.id;
-    const fetchData = sensorModel.fetchSingleData(id);
-    res.send({ data: fetchData });
+    return new Promise((resolve, reject) => {
+      const id = req.params.id;
+      const fetchData = sensorModel.fetchSingleData(id);
+      if (fetchData.success) {
+        const successMessage = {
+          success: fetchData.success,
+          msg: fetchData.msg,
+        };
+        res.status(200).send(fetchData);
+        resolve(fetchData);
+      } else {
+        const failMessage = {
+          success: fetchData.success,
+          msg: fetchData.msg,
+        };
+        res.status(401).send(failMessage);
+        reject(fetchData);
+      }
+    });
   },
 
   addData: function (req, res) {

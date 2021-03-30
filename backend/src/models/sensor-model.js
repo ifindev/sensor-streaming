@@ -8,8 +8,27 @@ module.exports = {
   },
 
   fetchSingleData: function (id) {
-    data = `Data with id ${id} was fetched from db.json`;
-    return data;
+    /* get data on json file */
+    const filename = `${process.cwd()}/data/sensor_data.json`;
+    const storedData = accessJSON.readFromJSON(filename);
+
+    /* Check whether data with this id exists in our storage or not */
+    const exist = storedData.find((item) => item.id == id);
+
+    if (exist) {
+      const status = {
+        success: true,
+        msg: 'data fetched successfully',
+        data: exist,
+      };
+      return status;
+    } else {
+      const status = {
+        success: false,
+        msg: "data with that id doesn't exist",
+      };
+      return status;
+    }
   },
 
   addData: function (data) {
