@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IoT Dashboard</title>
+  </head>
+  <body>
+    <h1>A Minimalist IoT Dashboard</h1>
+    <div id="app">
+      <p>{{ message }}</p>
+      <p v-for="todo in todos" :key="todo.id">{{todo}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          id: 1,
+          message: 'Hello Vue!',
+          todos: [],
+        },
+        created() {
+          // this.getTodos();
+          setInterval(() => this.getTodos(), 2000);
+        },
+
+        methods: {
+          randomNumber(min, max) {
+            const r = Math.random() * (max - min) + min;
+            return Math.floor(r);
+          },
+
+          async getTodos() {
+            this.id = this.id + 1;
+            axios
+              .get(`https://jsonplaceholder.typicode.com/todos/${this.id}`)
+              .then((response) => {
+                console.log(response.data);
+                this.todos.push(response.data);
+              })
+              .catch((err) => console.log(err));
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
