@@ -11,8 +11,14 @@ let id = 1;
 setInterval(() => {
   const temperature = sensorData.getTemperature();
   const humidity = sensorData.getHumidity();
-  const area = ['roomArea1', 'roomArea2', 'roomArea3'];
-  const roomArea = area[id % 3];
+  const area = [
+    'roomArea1',
+    'roomArea2',
+    'roomArea3',
+    'roomArea4',
+    'roomArea5',
+  ];
+  const roomArea = area[id % 5];
 
   const data = {
     id: id,
