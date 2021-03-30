@@ -27,6 +27,9 @@ To use this application, do the followings:
 
 Cheers! ✌️✌️
 
+P.S:
+The code was written and tested on linux ubuntu 20.04. So if you run it on windows and have a trouble, please post an issue or probably just reach me out directly. Thank you!
+
 ## Copyright
 
 &copy; Muhammad Arifin - 2021
