@@ -23,7 +23,7 @@ To use this application, do the followings:
 - On the root file which is where this readme exist, run `npm install`.
 - Then, `cd` into `backend` and run `node app.js` on your terminal. The server will run automatically.
 - Then go into the `client` directory. Run `node client.js`. The client will start to fill up `sensor_data.json`.
-- Terminate the client on terminal. Then go into `backend/data/sensor_data.json`. You will see that the json file will have a data for five different room areas.
+- Terminate the client on terminal using `ctrl+c`. Then go into `backend/data/sensor_data.json`. You will see that the json file will have a data for five different room areas.
 
 Cheers! ✌️✌️
 

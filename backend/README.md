@@ -1,3 +1,21 @@
+## Available Endpoints
+- GET: /sensor/fetch --> Fetch all data in json (Not implemented yet)
+- GET: /sensor/fetch/{id} --> Implemented and tested. Stable on Postman but return Promise error when we hit it using axios or fetch API. 
+- POST: /sensor/add. The post body should have the following data:
+  - id: Number
+  - temperature: Number
+  - humidity: Number
+  - roomArea: String
+- Example of the request body for the POST request:
+```js
+{
+  "id": 1,
+  "temperature": 21.279782079384667,
+  "humidity": 87.2525512400796,
+  "roomArea": "roomArea1"
+}
+```
+
 ## Todo for the backend part:
 
 - [ **DONE** ] Write a basic skeleton for sensor data model, controller, and router.
@@ -33,4 +51,6 @@
 
 - Handle GET request for all the data from json file.
 
-- Handle GET request for a single data in the json file.
+- [ **DONE** ]  Handle GET request for a single data in the json file.
+  - The GET request is stable when it was tested using Postman. 
+  - It is still unstable when we hit the endpoint using axios or fetch from the Frontend. 
