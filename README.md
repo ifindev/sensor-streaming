@@ -13,7 +13,7 @@ Basically, the underlying architecture for this application can be understood fr
 
 ## Progress
 
-Currently, the Backend and the Client are the only two that's been working fine. The front end is still having a problem, so I will continue it later.
+Currently, the Backend and the Client are the only two that's been working fine. The front end is still having a problem to get the data from the Express endpoint. But it is already working for fetching and updating data on the DOM fetched from the json api. so I will continue it later.
 
 ## Guide to Use
 
@@ -24,6 +24,7 @@ To use this application, do the followings:
 - Then, `cd` into `backend` and run `node app.js` on your terminal. The server will run automatically.
 - Then go into the `client` directory. Run `node client.js`. The client will start to fill up `sensor_data.json`.
 - Terminate the client on terminal using `ctrl+c`. Then go into `backend/data/sensor_data.json`. You will see that the json file will have a data for five different room areas.
+- For the front-end, just open it on google-chrome. It will start fetching data from jsonplaceholder. 
 
 Cheers! ✌️✌️
 
