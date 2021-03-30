@@ -6,7 +6,7 @@
   - temperature: Number
   - humidity: Number
   - roomArea: String
-Example of the request body for the POST request:
+- Example of the request body for the POST request:
 ```js
 {
   "id": 1,
